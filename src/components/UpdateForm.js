@@ -36,10 +36,10 @@ const UpdateForm = ({ task, setIsEditing }) => {
           </Select>
         </Typography>
         <CardActions>
-          <Button variant="contained" onClick={onUpdateBtnClicked}>
+          <Button variant="contained" color="secondary" onClick={onUpdateBtnClicked}>
             Update task
           </Button>
-          <Button variant="contained" onClick={() => setIsEditing(false)}>
+          <Button variant="contained" color="error" onClick={() => setIsEditing(false)}>
             Back
           </Button>
         </CardActions>

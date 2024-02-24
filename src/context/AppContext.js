@@ -1,12 +1,22 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import {v4 as uuid} from 'uuid';
 
 export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState(() => {
+    console.log("localstorage called!");
+    const saved = localStorage.getItem('taskList');
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('taskList', JSON.stringify(taskList));
+  },[taskList])
   
   const addTask = (task) => {
-    const id = "id" + Math.random().toString(16).slice(2);
+    const id = uuid();
     setTaskList([...taskList, { ...task, id }]);
   };
 

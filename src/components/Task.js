@@ -30,10 +30,10 @@ const Task = ({ task }) => {
         </Typography>
         <CardActions>
         
-          <Button size="small" onClick={onEditBtnClicked}>
+          <Button variant="contained" size="small" onClick={onEditBtnClicked} color="warning">
             Edit
           </Button>
-          <Button data-testid="deleteBtn" name="delete" size="small" onClick={onDeleteBtnClicked}>
+          <Button variant="contained" data-testid="deleteBtn" name="delete" size="small" color="error" onClick={onDeleteBtnClicked}>
             Delete
           </Button>
         </CardActions>
