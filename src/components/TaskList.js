@@ -7,11 +7,15 @@ const TaskList = ({ status }) => {
   if(taskList.length === 0) return <div></div>
   const setTitle = (status) => {
     switch(status){
-      case 0: return "Todo"
-      case 1: return "In Progress"
-      case 2: return "Complete"
+      case 0: return `Open - ${count(0)}`
+      case 1: return `Progress - ${count(1)}`
+      case 2: return `Completed - ${count(2)}`
       default: return
     }
+  }
+  const count = (status) => {
+    let filteredList = taskList.filter((task) => task.status === status)
+    return filteredList.length;
   }
   return (
     <div>
