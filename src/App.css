@@ -1,18 +1,19 @@
 .App {
-  width: 98%;
-  margin: 0 1%;
+  width: fit-content;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  background: linear-gradient(to top, #ffffff 0%, #669999 100%);
   /* align-items: center; */
 }
 .Header{
   border-bottom: 1px solid #EEE;
-  padding:1rem;
-  padding-left:2rem;
-  width:95vw;
+  padding:1rem 5rem;
+  /* padding-left:2rem;
+  padding-right: 5rem; */
+  width:89.6vw;
   display:flex; 
-  gap:1rem;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
