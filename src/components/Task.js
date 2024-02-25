@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import { Card, CardContent, CardActions, Button, Typography } from "@mui/material";
+import PushPinIcon from '@mui/icons-material/PushPin';
+import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import UpdateForm from "./UpdateForm";
 import "../styles/Task.css";
 
@@ -56,12 +58,11 @@ const Task = ({ task }) => {
           >
             Delete
           </Button>
-          <Button 
-            variant="contained"
+          <Button
             size="small"
             color={isTaskFavorited(task.id) ? "primary" : "secondary"} // Change button color based on favorite state
             onClick={isTaskFavorited(task.id) ? onPinClicked : onPinUnClicked}
-          >{isTaskFavorited(task.id) ? "Pin" : "UnPin"}
+          >{isTaskFavorited(task.id) ? <PushPinIcon/> : <PushPinOutlinedIcon/>}
           </Button> 
         </CardActions>
       </CardContent>
