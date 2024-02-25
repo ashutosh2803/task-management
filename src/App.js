@@ -21,6 +21,7 @@ function App() {
   //   color: theme ? 'green' : 'red',
   //   fontSize: 20,
   // };
+  console.log("owner", process.env.REACT_APP_OWNER);
   return (
     <ThemeContextProvider>
     <AppContextProvider>
