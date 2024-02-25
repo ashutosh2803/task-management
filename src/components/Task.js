@@ -59,7 +59,6 @@ const Task = ({ task }) => {
             Delete
           </Button>
           <Button
-            size="small"
             color={isTaskFavorited(task.id) ? "primary" : "secondary"} // Change button color based on favorite state
             onClick={isTaskFavorited(task.id) ? onPinClicked : onPinUnClicked}
           >{isTaskFavorited(task.id) ? <PushPinIcon/> : <PushPinOutlinedIcon/>}
