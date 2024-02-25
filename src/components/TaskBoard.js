@@ -3,7 +3,7 @@ import Column from './Column'
 
 const TaskBoard = () => {
   return (
-    <div>
+    <div className='taskBoard'>
         <Column />
     </div>
   )

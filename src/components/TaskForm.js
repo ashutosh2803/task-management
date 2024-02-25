@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import { TextField, Button } from "@mui/material";
+import "../styles/TaskForm.css"
+
 const TaskForm = ({ setIsOpen }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -27,6 +29,7 @@ const TaskForm = ({ setIsOpen }) => {
     >
       <TextField
         inputProps={{ "data-testid": "name" }}
+        className="TaskFormInput"
         label="Name"
         required
         InputLabelProps={{ shrink: true }}
@@ -37,6 +40,7 @@ const TaskForm = ({ setIsOpen }) => {
       />
       <TextField
         inputProps={{ "data-testid": "description" }}
+        className="TaskFormInput"
         label="Description"
         required
         InputLabelProps={{ shrink: true }}
@@ -47,6 +51,7 @@ const TaskForm = ({ setIsOpen }) => {
       />
       <TextField
         inputProps={{ "data-testid": "deadline" }}
+        className="TaskFormInput"
         label="Deadline"
         required
         InputLabelProps={{ shrink: true }}
@@ -55,7 +60,7 @@ const TaskForm = ({ setIsOpen }) => {
         value={deadline}
         onChange={(event) => setDeadline(event.target.value)}
       />
-      <Button type="submit" variant="contained" color="success">
+      <Button type="submit" className="TaskFormButton" variant="contained" color="success">
         Add task
       </Button>
     </form>

@@ -17,7 +17,7 @@ const UpdateForm = ({ task, setIsEditing }) => {
     setIsEditing(false);
   };
   return (
-    <Card variant="outlined">
+    <Card variant="outlined" className="updateForm">
       <CardContent className="TaskForm">
         <Typography variant="h5" component="div">
           <TextField inputProps={{ "data-testid": "name" }} label="Name" InputLabelProps={{ shrink: true }} variant="outlined" type="text" value={name} onChange={(event) => setName(event.target.value)} />
