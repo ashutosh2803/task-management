@@ -1,5 +1,12 @@
 # Task Management
 ---
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ashutosh2803_task-management&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ashutosh2803_task-management)
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=ashutosh2803_task-management)
+
+--- 
+
 ## Running the app
 
 ## To run the deployed app visit : https://ashutosh-task-management.vercel.app/
