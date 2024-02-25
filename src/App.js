@@ -6,15 +6,6 @@ import Header from "./components/Header";
 import SimpleDialog from "./components/SimpleDialog";
 import ThemeContextProvider from "./context/ThemeContext";
 
-/*
-TaskManagement
-  - TaskForm
-  - TaskBoard
-    - Column
-      - TaskList
-        - Task
-*/
-
 function App() {
   // const theme = localStorage.getItem("presetTheme");
   // const styles = {
