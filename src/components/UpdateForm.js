@@ -19,10 +19,10 @@ const UpdateForm = ({ task, setIsEditing }) => {
   return (
     <Card variant="outlined" className="updateForm">
       <CardContent>
-        <Typography variant="h5" component="div">
+        <Typography sx={{ mb: 1.5 }} variant="h5" component="div">
           <TextField inputProps={{ "data-testid": "name" }} label="Name" InputLabelProps={{ shrink: true }} variant="outlined" type="text" value={name} onChange={(event) => setName(event.target.value)} />
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography sx={{ mb: 1.5 }} variant="body2" color="text.secondary">
           <TextField inputProps={{ "data-testid": "description" }} label="Description" InputLabelProps={{ shrink: true }} variant="outlined" type="text" value={description} onChange={(event) => setDescription(event.target.value)} />
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">

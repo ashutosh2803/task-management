@@ -1,6 +1,11 @@
 .TaskFormInput {
   padding: 5%;
 }
+.TaskFormInputDeadline{
+  padding: 5%;
+  width: 90%;
+  min-width: 90%;
+}
 .TaskFormButton{
     margin: 5%;
 }
