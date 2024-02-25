@@ -27,39 +27,44 @@ const TaskForm = ({ setIsOpen }) => {
         e.preventDefault();
       }}
     >
-      <TextField
-        inputProps={{ "data-testid": "name" }}
-        className="TaskFormInput"
-        label="Name"
-        required
-        InputLabelProps={{ shrink: true }}
-        variant="outlined"
-        type="text"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
-      <TextField
-        inputProps={{ "data-testid": "description" }}
-        className="TaskFormInput"
-        label="Description"
-        required
-        InputLabelProps={{ shrink: true }}
-        variant="outlined"
-        type="text"
-        value={description}
-        onChange={(event) => setDescription(event.target.value)}
-      />
-      <TextField
-        inputProps={{ "data-testid": "deadline" }}
-        className="TaskFormInput"
-        label="Deadline"
-        required
-        InputLabelProps={{ shrink: true }}
-        variant="outlined"
-        type="date"
-        value={deadline}
-        onChange={(event) => setDeadline(event.target.value)}
-      />
+      <div className="TaskFormInput">
+        <TextField
+          inputProps={{ "data-testid": "name" }}
+          
+          label="Name"
+          required
+          InputLabelProps={{ shrink: true }}
+          variant="outlined"
+          type="text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+      </div>
+      <div className="TaskFormInput">
+        <TextField
+          inputProps={{ "data-testid": "description" }}
+          className="TaskFormInput"
+          label="Description"
+          required
+          InputLabelProps={{ shrink: true }}
+          variant="outlined"
+          type="text"
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        />
+      </div>
+      <div className="TaskFormInput">
+        <TextField
+          inputProps={{ "data-testid": "deadline" }}
+          label="Deadline"
+          required
+          InputLabelProps={{ shrink: true }}
+          variant="outlined"
+          type="date"
+          value={deadline}
+          onChange={(event) => setDeadline(event.target.value)}
+          />
+      </div>
       <Button type="submit" className="TaskFormButton" variant="contained" color="success">
         Add task
       </Button>
