@@ -6,31 +6,31 @@
   background: linear-gradient(to top, #ffffff 0%, #669999 100%);
   /* align-items: center; */
 }
-.Header{
-  border-bottom: 1px solid #EEE;
-  padding:1rem 5rem;
+.Header {
+  border-bottom: 1px solid #eee;
+  padding: 1rem 5rem;
   /* padding-left:2rem;
   padding-right: 5rem; */
-  width:89.6vw;
-  display:flex; 
+  width: 89.6vw;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-.taskBoard{
+.taskBoard {
   margin: 1%;
 }
 .TaskForm {
   width: 100%;
-  display:flex;
+  display: flex;
   align-items: center;
   flex-direction: column;
 }
-.updateForm{
+.updateForm {
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
-.TaskTitle{
-  padding:1rem;
+.TaskTitle {
+  padding: 1rem;
 }

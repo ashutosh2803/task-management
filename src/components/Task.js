@@ -1,13 +1,20 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
-import { Card, CardContent, CardActions, Button, Typography } from "@mui/material";
-import PushPinIcon from '@mui/icons-material/PushPin';
-import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
+import {
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+  Typography,
+} from "@mui/material";
+import PushPinIcon from "@mui/icons-material/PushPin";
+import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import UpdateForm from "./UpdateForm";
 import "../styles/Task.css";
 
 const Task = ({ task }) => {
-  const { removeTask, pinToFavorites, isTaskFavorited, removeFromFavorites } = useContext(AppContext);
+  const { removeTask, pinToFavorites, isTaskFavorited, removeFromFavorites } =
+    useContext(AppContext);
   const [isEditing, setIsEditing] = useState(false);
 
   const onEditBtnClicked = () => {
@@ -23,7 +30,7 @@ const Task = ({ task }) => {
   };
   const onPinUnClicked = () => {
     removeFromFavorites(task.id); // Call function from AppContext to un-toggle favorite state
-  }
+  };
 
   if (isEditing) return <UpdateForm task={task} setIsEditing={setIsEditing} />;
 
@@ -36,7 +43,11 @@ const Task = ({ task }) => {
         <Typography sx={{ fontSize: 14, p: 2, pb: 1 }} color="text.secondary">
           {task.description}
         </Typography>
-        <Typography sx={{ fontSize: 14, px: 2 }} color="text.secondary" gutterBottom>
+        <Typography
+          sx={{ fontSize: 14, px: 2 }}
+          color="text.secondary"
+          gutterBottom
+        >
           {task.deadline}
         </Typography>
         <CardActions>
@@ -61,8 +72,13 @@ const Task = ({ task }) => {
           <Button
             color={isTaskFavorited(task.id) ? "primary" : "secondary"} // Change button color based on favorite state
             onClick={isTaskFavorited(task.id) ? onPinClicked : onPinUnClicked}
-          >{isTaskFavorited(task.id) ? <PushPinIcon/> : <PushPinOutlinedIcon/>}
-          </Button> 
+          >
+            {isTaskFavorited(task.id) ? (
+              <PushPinIcon />
+            ) : (
+              <PushPinOutlinedIcon />
+            )}
+          </Button>
         </CardActions>
       </CardContent>
     </Card>

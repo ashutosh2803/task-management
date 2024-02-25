@@ -1,6 +1,15 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
-import { Card, CardContent, CardActions, Button, Typography, TextField, Select, MenuItem } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+  Typography,
+  TextField,
+  Select,
+  MenuItem,
+} from "@mui/material";
 
 const UpdateForm = ({ task, setIsEditing }) => {
   const [name, setName] = useState(task.name);
@@ -20,26 +29,64 @@ const UpdateForm = ({ task, setIsEditing }) => {
     <Card variant="outlined" className="updateForm">
       <CardContent>
         <Typography sx={{ mb: 1.5 }} variant="h5" component="div">
-          <TextField inputProps={{ "data-testid": "name" }} label="Name" InputLabelProps={{ shrink: true }} variant="outlined" type="text" value={name} onChange={(event) => setName(event.target.value)} />
+          <TextField
+            inputProps={{ "data-testid": "name" }}
+            label="Name"
+            InputLabelProps={{ shrink: true }}
+            variant="outlined"
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
         </Typography>
         <Typography sx={{ mb: 1.5 }} variant="body2" color="text.secondary">
-          <TextField inputProps={{ "data-testid": "description" }} label="Description" InputLabelProps={{ shrink: true }} variant="outlined" type="text" value={description} onChange={(event) => setDescription(event.target.value)} />
+          <TextField
+            inputProps={{ "data-testid": "description" }}
+            label="Description"
+            InputLabelProps={{ shrink: true }}
+            variant="outlined"
+            type="text"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+          />
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          <TextField inputProps={{ "data-testid": "deadline" }} label="Deadline" InputLabelProps={{ shrink: true }} variant="outlined" type="date" value={deadline} onChange={(event) => setDeadline(event.target.value)} />
+          <TextField
+            inputProps={{ "data-testid": "deadline" }}
+            label="Deadline"
+            InputLabelProps={{ shrink: true }}
+            variant="outlined"
+            type="date"
+            value={deadline}
+            onChange={(event) => setDeadline(event.target.value)}
+          />
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          <Select labelId="demo-simple-select-label" id="demo-simple-select" value={status} label="Age" onChange={(event) => setStatus(event.target.value)}>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={status}
+            label="Age"
+            onChange={(event) => setStatus(event.target.value)}
+          >
             <MenuItem value={0}>Todo</MenuItem>
             <MenuItem value={1}>In progress</MenuItem>
             <MenuItem value={2}>Completed</MenuItem>
           </Select>
         </Typography>
         <CardActions>
-          <Button variant="contained" color="secondary" onClick={onUpdateBtnClicked}>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={onUpdateBtnClicked}
+          >
             Update task
           </Button>
-          <Button variant="contained" color="error" onClick={() => setIsEditing(false)}>
+          <Button
+            variant="contained"
+            color="error"
+            onClick={() => setIsEditing(false)}
+          >
             Back
           </Button>
         </CardActions>

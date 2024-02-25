@@ -55,23 +55,29 @@ const AppContextProvider = ({ children }) => {
     let taskToFavorite = taskList.filter((item) => item.id === id);
     if (taskToFavorite) {
       updateTask({ ...taskToFavorite, isFavorite: true }); // Update task in taskList
-      setFavoriteList([...favoriteList, { ...taskToFavorite, isFavorite: true }]);
+      setFavoriteList([
+        ...favoriteList,
+        { ...taskToFavorite, isFavorite: true },
+      ]);
     }
   };
 
   const removeFromFavorites = (id) => {
     let filteredFavorites = taskList.filter((item) => item.id !== id);
     setFavoriteList(filteredFavorites);
-    updateTask({ ...taskList.filter((task) => task.id === id), isFavorite: false }); // Update task in taskList
+    updateTask({
+      ...taskList.filter((task) => task.id === id),
+      isFavorite: false,
+    }); // Update task in taskList
   };
 
   const isTaskFavorited = (id) => {
     let filteredFavorites = favoriteList.filter((task) => task.id === id);
-    console.log(filteredFavorites)
+    console.log(filteredFavorites);
     if (filteredFavorites) {
       return filteredFavorites.isFavorite;
     }
-  }
+  };
 
   const values = {
     taskList,

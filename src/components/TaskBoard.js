@@ -1,12 +1,12 @@
-import React from 'react'
-import Column from './Column'
+import React from "react";
+import Column from "./Column";
 
 const TaskBoard = () => {
   return (
-    <div className='taskBoard'>
-        <Column />
+    <div className="taskBoard">
+      <Column />
     </div>
-  )
-}
+  );
+};
 
-export default TaskBoard
+export default TaskBoard;

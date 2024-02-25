@@ -24,16 +24,16 @@ function App() {
   console.log("owner", process.env.REACT_APP_OWNER);
   return (
     <ThemeContextProvider>
-    <AppContextProvider>
-      <DialogContextProvider>
-      <div className="App" >
-       <Header />
-        <TaskBoard />
-        <SimpleDialog />
-      </div>
-      </DialogContextProvider>
+      <AppContextProvider>
+        <DialogContextProvider>
+          <div className="App">
+            <Header />
+            <TaskBoard />
+            <SimpleDialog />
+          </div>
+        </DialogContextProvider>
       </AppContextProvider>
-      </ThemeContextProvider>
+    </ThemeContextProvider>
   );
 }
 

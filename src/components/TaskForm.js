@@ -67,10 +67,20 @@ const TaskForm = ({ setIsOpen }) => {
           onChange={(event) => setDeadline(event.target.value)}
         />
       </div>
-      <div> 
-        <TextField sx={{mr: 1.5, ml: 1.5, mb: 1.5}} size="small" type="file" />
+      <div>
+        <TextField
+          sx={{ mr: 1.5, ml: 1.5, mb: 1.5 }}
+          size="small"
+          type="file"
+        />
       </div>
-      <Button type="submit" sx={{ mb: 1.5 }} className="TaskFormButton" variant="contained" color="success">
+      <Button
+        type="submit"
+        sx={{ mb: 1.5 }}
+        className="TaskFormButton"
+        variant="contained"
+        color="success"
+      >
         Add task
       </Button>
     </form>

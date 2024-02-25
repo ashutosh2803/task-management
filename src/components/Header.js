@@ -15,8 +15,17 @@ const Header = () => {
   return (
     <header className="Header customFlex">
       <h2>Task Management</h2>
-      {theme === 1 ? <LightMode onClick={() => toggleTheme(1)} /> : <DarkMode onClick={() => toggleTheme(2)} />}
-      <Button variant="contained" color="info" endIcon={<Add/>} onClick={handleClickOpen}>
+      {theme === 1 ? (
+        <LightMode onClick={() => toggleTheme(1)} />
+      ) : (
+        <DarkMode onClick={() => toggleTheme(2)} />
+      )}
+      <Button
+        variant="contained"
+        color="info"
+        endIcon={<Add />}
+        onClick={handleClickOpen}
+      >
         New task
       </Button>
     </header>

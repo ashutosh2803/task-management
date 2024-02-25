@@ -11,12 +11,12 @@ const ThemeContextProvider = ({ children }) => {
     return initialValue || 1;
   });
   useEffect(() => {
-      localStorage.setItem("presetTheme", theme);
+    localStorage.setItem("presetTheme", theme);
   }, [theme]);
   const toggleTheme = (option) => {
     if (option === 1) {
-        setTheme(2);
-      }
+      setTheme(2);
+    }
     if (option === 2) {
       setTheme(1);
     }
