@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import { Card, CardContent, CardActions, Button, Typography } from "@mui/material";
 import UpdateForm from "./UpdateForm";
+import "../styles/Task.css";
 
 const Task = ({ task }) => {
-  const { removeTask } = useContext(AppContext);
+  const { removeTask, pinToFavorites, isTaskFavorited, removeFromFavorites } = useContext(AppContext);
   const [isEditing, setIsEditing] = useState(false);
 
   const onEditBtnClicked = () => {
@@ -15,27 +16,53 @@ const Task = ({ task }) => {
     removeTask(task.id);
   };
 
+  const onPinClicked = () => {
+    pinToFavorites(task.id); // Call function from AppContext to toggle favorite state
+  };
+  const onPinUnClicked = () => {
+    removeFromFavorites(task.id); // Call function from AppContext to un-toggle favorite state
+  }
+
   if (isEditing) return <UpdateForm task={task} setIsEditing={setIsEditing} />;
+
   return (
-    <Card variant="outlined">
+    <Card variant="outlined" className="customContainer">
       <CardContent>
         <Typography sx={{ px: 2 }} variant="h5" component="div">
           {task.name}
         </Typography>
-        <Typography sx={{ fontSize: 14, p: 2,pb:1 }} color="text.secondary" >
+        <Typography sx={{ fontSize: 14, p: 2, pb: 1 }} color="text.secondary">
           {task.description}
         </Typography>
         <Typography sx={{ fontSize: 14, px: 2 }} color="text.secondary" gutterBottom>
           {task.deadline}
         </Typography>
         <CardActions>
-        
-          <Button variant="contained" size="small" onClick={onEditBtnClicked} color="warning">
+          <Button
+            variant="contained"
+            size="small"
+            onClick={onEditBtnClicked}
+            color="warning"
+          >
             Edit
           </Button>
-          <Button variant="contained" data-testid="deleteBtn" name="delete" size="small" color="error" onClick={onDeleteBtnClicked}>
+          <Button
+            variant="contained"
+            data-testid="deleteBtn"
+            name="delete"
+            size="small"
+            color="error"
+            onClick={onDeleteBtnClicked}
+          >
             Delete
           </Button>
+          <Button 
+            variant="contained"
+            size="small"
+            color={isTaskFavorited(task.id) ? "primary" : "secondary"} // Change button color based on favorite state
+            onClick={isTaskFavorited(task.id) ? onPinClicked : onPinUnClicked}
+          >{isTaskFavorited(task.id) ? "Pin" : "UnPin"}
+          </Button> 
         </CardActions>
       </CardContent>
     </Card>

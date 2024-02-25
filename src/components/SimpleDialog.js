@@ -9,7 +9,7 @@ function SimpleDialog() {
   };
 
   return (
-    <Dialog fixed onClose={handleClose} open={isOpen}>
+    <Dialog fixed="true" onClose={handleClose} open={isOpen}>
       <DialogTitle>Create new task</DialogTitle>
       <TaskForm setIsOpen={setIsOpen} />
     </Dialog>

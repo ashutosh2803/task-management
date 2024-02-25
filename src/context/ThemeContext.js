@@ -12,7 +12,6 @@ const ThemeContextProvider = ({ children }) => {
   });
   useEffect(() => {
       localStorage.setItem("presetTheme", theme);
-      console.log(theme);
   }, [theme]);
   const toggleTheme = (option) => {
     if (option === 1) {

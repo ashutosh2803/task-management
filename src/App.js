@@ -16,7 +16,7 @@ TaskManagement
 */
 
 function App() {
-  const theme = localStorage.getItem("presetTheme");
+  // const theme = localStorage.getItem("presetTheme");
   // const styles = {
   //   color: theme ? 'green' : 'red',
   //   fontSize: 20,
