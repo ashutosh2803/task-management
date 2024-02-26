@@ -9,7 +9,7 @@
 
 ## Running the app
 
-## To run the deployed app visit : https://ashutosh-task-management.vercel.app/
+### To run the deployed app visit : https://ashutosh-task-management.vercel.app/
 
 To run the app locally, 
 
